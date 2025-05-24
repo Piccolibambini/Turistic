@@ -1,175 +1,136 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ricette Pasta Frolla</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Stile personalizzato per il font Inter */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Colore di sfondo leggero */
-        }
-        /* Stile per i pulsanti al passaggio del mouse */
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        /* Stile per il contenitore delle ricette per una transizione fluida */
-        .recipe-content {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .recipe-content.active {
-            opacity: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Posti da Visitare in Albania</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .destination {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .destination:hover {
+      transform: translateY(-5px);
+    }
+    .destination h3 {
+      color: #007BFF;
+      font-size: 1.5em;
+    }
+    .description {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+      margin-top: 15px;
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
-<body class="flex flex-col min-h-screen items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 lg:p-10 w-full max-w-4xl">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">
-                Ricette di Pasta Frolla
-            </h1>
-            <p class="text-lg text-gray-600">
-                Scopri i segreti per una pasta frolla perfetta!
-            </p>
-        </header>
+<body>
 
-        <nav class="flex flex-wrap justify-center gap-4 mb-8">
-            <button id="btnClassica" class="btn-hover bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                Classica
-            </button>
-            <button id="btnCacao" class="btn-hover bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                Al Cacao
-            </button>
-            <button id="btnIntegrale" class="btn-hover bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">
-                Integrale
-            </button>
-            <button id="btnMandorle" class="btn-hover bg-purple-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75">
-                Alle Mandorle
-            </button>
-        </nav>
+  <header>
+    5 Posti da Visitare in Albania
+  </header>
 
-        <main id="recipeDisplay" class="bg-gray-50 p-6 rounded-lg shadow-inner text-gray-700 min-h-[300px] flex items-center justify-center text-center">
-            <p class="text-xl text-gray-500">Seleziona una ricetta dal menu qui sopra per iniziare!</p>
-        </main>
+  <div class="container">
+    <div class="destination">
+      <h3>Butrinto</h3>
+      <p class="description">Un antico sito archeologico patrimonio dell'umanità.</p>
+      <button class="button" onclick="toggleDescription('butrinto')">Scopri di più</button>
+      <div id="butrinto" class="hidden">
+        <p>La distanza da Valona è di circa 70 km. Butrinto è un sito archeologico greco-romano che racconta la storia di diverse civiltà.</p>
+      </div>
     </div>
 
-    <script>
-        // Funzione per mostrare una ricetta specifica
-        function showRecipe(recipeName) {
-            const recipeDisplay = document.getElementById('recipeDisplay');
-            let content = '';
+    <div class="destination">
+      <h3>Gjirokastra</h3>
+      <p class="description">La città di pietra, con le sue case tradizionali.</p>
+      <button class="button" onclick="toggleDescription('gjirokastra')">Scopri di più</button>
+      <div id="gjirokastra" class="hidden">
+        <p>La distanza da Valona è di circa 120 km. Gjirokastra è famosa per la sua architettura ottomana e il castello imponente.</p>
+      </div>
+    </div>
 
-            // Definizioni delle ricette
-            switch (recipeName) {
-                case 'classica':
-                    content = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pasta Frolla Classica</h2>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Ingredienti:</h3>
-                        <ul class="list-disc list-inside text-left mx-auto max-w-md mb-4">
-                            <li>300g farina 00</li>
-                            <li>150g burro freddo a cubetti</li>
-                            <li>100g zucchero a velo</li>
-                            <li>1 uovo intero + 1 tuorlo</li>
-                            <li>Scorza grattugiata di 1 limone (o vaniglia)</li>
-                            <li>Un pizzico di sale</li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Preparazione:</h3>
-                        <ol class="list-decimal list-inside text-left mx-auto max-w-md">
-                            <li>Disponi la farina a fontana su una spianatoia, aggiungi il burro freddo a cubetti e lavora velocemente con la punta delle dita fino ad ottenere un composto sabbioso.</li>
-                            <li>Aggiungi lo zucchero a velo, l'uovo intero, il tuorlo, la scorza di limone e il pizzico di sale.</li>
-                            <li>Impasta rapidamente fino ad ottenere un panetto liscio e omogeneo. Non lavorare troppo l'impasto per evitare che diventi elastico.</li>
-                            <li>Avvolgi il panetto nella pellicola trasparente e lascialo riposare in frigorifero per almeno 30 minuti prima di utilizzarlo.</li>
-                        </ol>
-                    `;
-                    break;
-                case 'cacao':
-                    content = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pasta Frolla al Cacao</h2>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Ingredienti:</h3>
-                        <ul class="list-disc list-inside text-left mx-auto max-w-md mb-4">
-                            <li>250g farina 00</li>
-                            <li>50g cacao amaro in polvere</li>
-                            <li>150g burro freddo a cubetti</li>
-                            <li>120g zucchero a velo</li>
-                            <li>1 uovo intero</li>
-                            <li>Un pizzico di sale</li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Preparazione:</h3>
-                        <ol class="list-decimal list-inside text-left mx-auto max-w-md">
-                            <li>Setaccia insieme farina e cacao.</li>
-                            <li>Procedi come per la pasta frolla classica, unendo il burro, lo zucchero, l'uovo e il sale.</li>
-                            <li>Impasta velocemente fino ad ottenere un panetto omogeneo.</li>
-                            <li>Fai riposare in frigorifero per almeno 30 minuti.</li>
-                        </ol>
-                    `;
-                    break;
-                case 'integrale':
-                    content = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pasta Frolla Integrale</h2>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Ingredienti:</h3>
-                        <ul class="list-disc list-inside text-left mx-auto max-w-md mb-4">
-                            <li>300g farina integrale</li>
-                            <li>130g burro freddo a cubetti</li>
-                            <li>90g zucchero di canna</li>
-                            <li>1 uovo intero + 1 tuorlo</li>
-                            <li>Un pizzico di sale</li>
-                            <li>Scorza grattugiata di 1 arancia (opzionale)</li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Preparazione:</h3>
-                        <ol class="list-decimal list-inside text-left mx-auto max-w-md">
-                            <li>Mescola la farina integrale con il burro freddo fino a ottenere un composto sabbioso.</li>
-                            <li>Aggiungi lo zucchero di canna, l'uovo, il tuorlo, il sale e la scorza d'arancia (se usata).</li>
-                            <li>Impasta brevemente fino a formare un panetto.</li>
-                            <li>Lascia riposare in frigorifero per almeno 45 minuti.</li>
-                        </ol>
-                    `;
-                    break;
-                case 'mandorle':
-                    content = `
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Pasta Frolla alle Mandorle</h2>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Ingredienti:</h3>
-                        <ul class="list-disc list-inside text-left mx-auto max-w-md mb-4">
-                            <li>250g farina 00</li>
-                            <li>50g farina di mandorle</li>
-                            <li>150g burro freddo a cubetti</li>
-                            <li>100g zucchero a velo</li>
-                            <li>1 uovo intero</li>
-                            <li>Estratto di mandorla (poche gocce, opzionale)</li>
-                            <li>Un pizzico di sale</li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-2">Preparazione:</h3>
-                        <ol class="list-decimal list-inside text-left mx-auto max-w-md">
-                            <li>Mescola la farina 00 con la farina di mandorle.</li>
-                            <li>Incorpora il burro freddo, poi lo zucchero a velo, l'uovo, l'estratto di mandorla (se usato) e il sale.</li>
-                            <li>Impasta velocemente fino ad avere un panetto liscio.</li>
-                            <li>Fai riposare in frigorifero per almeno 30 minuti.</li>
-                        </ol>
-                    `;
-                    break;
-                default:
-                    content = `<p class="text-xl text-gray-500">Seleziona una ricetta dal menu qui sopra per iniziare!</p>`;
-            }
+    <div class="destination">
+      <h3>Berat</h3>
+      <p class="description">Conosciuta come la città dalle mille finestre.</p>
+      <button class="button" onclick="toggleDescription('berat')">Scopri di più</button>
+      <div id="berat" class="hidden">
+        <p>La distanza da Valona è di circa 95 km. Berat è famosa per le sue case bianche con finestre in stile ottomano e il castello medievale.</p>
+      </div>
+    </div>
 
-            // Aggiungi la classe 'active' per la transizione di opacità
-            recipeDisplay.classList.remove('active'); // Rimuovi per resettare la transizione
-            setTimeout(() => {
-                recipeDisplay.innerHTML = content;
-                recipeDisplay.classList.add('active'); // Aggiungi dopo un breve ritardo
-            }, 100); // Breve ritardo per permettere la transizione
-        }
+    <div class="destination">
+      <h3>Parco Nazionale di Llogara</h3>
+      <p class="description">Un parco naturale con panorami mozzafiato.</p>
+      <button class="button" onclick="toggleDescription('llogara')">Scopri di più</button>
+      <div id="llogara" class="hidden">
+        <p>La distanza da Valona è di circa 40 km. Il parco offre viste spettacolari sul mare Ionio e sulla costa albanese.</p>
+      </div>
+    </div>
 
-        // Aggiungi gli event listener ai pulsanti
-        document.getElementById('btnClassica').addEventListener('click', () => showRecipe('classica'));
-        document.getElementById('btnCacao').addEventListener('click', () => showRecipe('cacao'));
-        document.getElementById('btnIntegrale').addEventListener('click', () => showRecipe('integrale'));
-        document.getElementById('btnMandorle').addEventListener('click', () => showRecipe('mandorle'));
+    <div class="destination">
+      <h3>Isola di Sazan</h3>
+      <p class="description">Un'isola dal fascino selvaggio e una storia militare.</p>
+      <button class="button" onclick="toggleDescription('sazan')">Scopri di più</button>
+      <div id="sazan" class="hidden">
+        <p>La distanza da Valona è di circa 25 km. L'isola di Sazan è famosa per le sue fortificazioni militari e per la natura incontaminata.</p>
+      </div>
+    </div>
+  </div>
 
-        // Mostra la ricetta classica all'avvio (opzionale)
-        // showRecipe('classica');
-    </script>
+  <script>
+    function toggleDescription(id) {
+      const description = document.getElementById(id);
+      if (description.style.display === "none" || description.style.display === "") {
+        description.style.display = "block";
+      } else {
+        description.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
